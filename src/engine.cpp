@@ -1,4 +1,3 @@
-/*
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
@@ -6,7 +5,6 @@
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/vec4.hpp>
 #include <glm/mat4x4.hpp>
-*/
 
 #include <bones/engine.h>
 #include <iostream>
@@ -17,7 +15,7 @@ void Bones::PrintHelloWorld() {
 }
 
 void Bones::InitWindow() {
-    /*
+
     glfwInit();
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
@@ -40,5 +38,4 @@ void Bones::InitWindow() {
 
     glfwTerminate();
 
-    */
 };
