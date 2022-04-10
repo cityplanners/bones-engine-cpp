@@ -8,7 +8,9 @@ find_package(glm CONFIG REQUIRED)
 find_package(Vulkan REQUIRED)
 find_package(glfw3 REQUIRED)
 
-add_library(${PROJECT_NAME} src/engine.cpp)
+file(GLOB SOURCES "src/*.cpp" "src/*/*.cpp" "src/*/*/*.cpp" "src/*/*/*/*.cpp")
+
+add_library(${PROJECT_NAME} ${SOURCES} src/engine.cpp)
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
@@ -16,6 +18,7 @@ target_include_directories(${PROJECT_NAME}
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         glm
     PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${Vulkan_INCLUDE_DIRS}
         glfw
 )

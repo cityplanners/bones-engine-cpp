@@ -1,7 +1,13 @@
 #pragma once
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
 
-class Bones {
-    public:
-        static void PrintHelloWorld();
-        static void InitWindow();
-};
+#define GLM_FORCE_RADIANS
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
+#include <glm/vec4.hpp>
+#include <glm/mat4x4.hpp>
+
+#include "platform/window.h"
+
+namespace BONES {
+}
