@@ -12,12 +12,18 @@
 namespace BONES {
     class Window {
     public:
-        void InitWindow();
-        void MainLoop();
-        void Cleanup();
+        void initWindow();
+        void initVulkan();
+        void mainLoop();
+        void cleanup();
         GLFWwindow* window;
     private:
         const uint32_t WIDTH = 600;
         const uint32_t HEIGHT = 800;
+
+        VKInstance instance;
+
+        void initWindow();
+        void createInstance();
     };
 }
