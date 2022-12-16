@@ -21,9 +21,8 @@ namespace BONES {
         const uint32_t WIDTH = 600;
         const uint32_t HEIGHT = 800;
 
-        VKInstance instance;
+        VkInstance instance;
 
-        void initWindow();
         void createInstance();
     };
 }

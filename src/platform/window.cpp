@@ -20,13 +20,13 @@ namespace BONES {
 
     };
 
-    void Windows::initVulkan() {
+    void Window::initVulkan() {
         createInstance();
     };
 
-    void Windows::createInstance() {
+    void Window::createInstance() {
         // Optional struct with application info
-        VKApplicationInfo appInfo{};
+        VkApplicationInfo appInfo{};
         appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
         appInfo.pApplicationName = "Hello Triangle";
         appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
