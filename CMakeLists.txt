@@ -34,12 +34,12 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-    PUBLIC 
+    PUBLIC
         glm::glm
+        glfw
     PRIVATE
         ${GLM_LIBRARIES}
         ${Vulkan_LIBRARIES}
-        glfw
 )
 
 install(TARGETS bones
