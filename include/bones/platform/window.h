@@ -8,6 +8,9 @@
 #include <glm/mat4x4.hpp>
 
 #include <iostream>
+#include <vector>
+
+using namespace std;
 
 namespace BONES {
     class Window {
@@ -24,5 +27,6 @@ namespace BONES {
         VkInstance instance;
 
         void createInstance();
+        void checkIfRequiredExtensionsAreSupported(uint32_t extensionCount, const char** glfwExtensions, vector<VkExtensionProperties> extensions);
     };
 }
