@@ -9,6 +9,8 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
+#include <optional>
 
 using namespace std;
 
@@ -23,6 +25,14 @@ namespace BONES {
     private:
         const uint32_t WIDTH = 600;
         const uint32_t HEIGHT = 800;
+
+        struct QueueFamilyIndices {
+            optional<uint32_t> graphicsFamily;
+
+            bool isComplete() {
+                return graphicsFamily.has_value();
+            }
+        };
 
         const vector<const char*> validationLayers = {
             "VK_LAYER_KHRONOS_validation"
@@ -40,6 +50,9 @@ namespace BONES {
         VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger);
         void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks* pAllocator);
         void createInstance();
+        QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
+        void pickPhysicalDevice();
+        int rateDeviceSuitability(VkPhysicalDevice device);
         void checkIfRequiredExtensionsAreSupported(uint32_t extensionCount, const char** glfwExtensions, vector<VkExtensionProperties> extensions);
         bool checkValidationLayerSupport();
         vector<const char*> getRequiredExtensions();

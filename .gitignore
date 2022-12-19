@@ -13,3 +13,4 @@ build/
 .vscode
 libbones.so*
 bones.pc
+tags
