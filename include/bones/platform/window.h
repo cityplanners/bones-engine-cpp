@@ -26,6 +26,9 @@ namespace BONES {
         const uint32_t WIDTH = 600;
         const uint32_t HEIGHT = 800;
 
+        VkDevice device;
+        VkQueue graphicsQueue;
+
         struct QueueFamilyIndices {
             optional<uint32_t> graphicsFamily;
 
@@ -50,6 +53,7 @@ namespace BONES {
         VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger);
         void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks* pAllocator);
         void createInstance();
+        void createLogicalDevice();
         QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
         void pickPhysicalDevice();
         int rateDeviceSuitability(VkPhysicalDevice device);
