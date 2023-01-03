@@ -10,7 +10,12 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 build/
+glm/
+glfw/
 .vscode
 libbones.so*
 bones.pc
 tags
+*.vcxproj
+*.vcxproj.filters
+*.sln
